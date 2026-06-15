@@ -65,7 +65,7 @@ function setChrome(minimal) {
   ["#navLinks", "#bottomNav", "#searchBtn", "#manageBtn"].forEach((sel) => $(sel)?.classList.toggle("hidden", minimal));
 }
 function setActive(route) {
-  const target = "" + (route === "lesson" ? "learn" : route);
+  const target = "#" + (route === "lesson" ? "learn" : route);
   $$(".nav-link, .bn-link").forEach((a) => a.classList.toggle("active", a.getAttribute("href") === target));
 }
 

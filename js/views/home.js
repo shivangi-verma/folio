@@ -71,15 +71,15 @@ function goalCard(g) {
         <div class="progress" style="height:8px"><div class="progress-fill" style="width:${pctToGoal}%"></div></div>
       </div>
       <div class="row" style="margin-top:16px;gap:8px">
-        <a class="btn btn-primary btn-sm" href="blueprint" data-link><i class="ph ph-compass"></i> See my plan</a>
-        <a class="btn btn-ghost btn-sm" href="onboarding" data-link>Adjust goal</a>
+        <a class="btn btn-primary btn-sm" href="#blueprint" data-link><i class="ph ph-compass"></i> See my plan</a>
+        <a class="btn btn-ghost btn-sm" href="#onboarding" data-link>Adjust goal</a>
       </div>
     </div>`;
 }
 
 function exploreCard(href, icon, title, desc) {
   return `
-    <a class="card card-pad card-link" href="${href}" data-link style="display:block">
+    <a class="card card-pad card-link" href="#${href}" data-link style="display:block">
       <div class="tip-ic" style="width:40px;height:40px;border-radius:12px;font-size:20px"><i class="ph ${icon}"></i></div>
       <div style="font-weight:600;margin-top:12px">${title}</div>
       <div class="help" style="margin:3px 0 0">${desc}</div>
