@@ -308,5 +308,5 @@ function finish() {
   });
   completeOnboarding();
   showToast("Welcome to Folio 🌱", "success");
-  location.hash = "home";
+  location.hash = "";
 }

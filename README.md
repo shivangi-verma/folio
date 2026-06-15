@@ -1,6 +1,3 @@
-
-<<<<<<< HEAD
-=======
 Folio is an educational stock recommendation and investor onboarding web app for first time equity investors in India. It walks a beginner through a short onboarding flow, builds a quantified risk profile from their background and goals, checks whether their target is realistic, and surfaces stock ideas drawn from past performance with a written reason for each one. It is a learning and discovery tool. It is not a broker, it is not investment advice, and it never places trades.
 
 This README explains what the app does, how a user moves through it, how it is built, and how each part actually works, including the formulas the engine uses.
@@ -332,4 +329,3 @@ Prerequisites: a free Vercel account, and either a Git host (GitHub, GitLab, or 
 - The `/api/advise` function is open as written. For a public deployment, add rate limiting or require the Supabase session token.
 - The bundled `NSE_CM_sym_master.json` (about 10 MB) is served as a static asset. The first load downloads it once, after which it is cached in the browser.
 - Custom domain: add it under the Vercel project's Domains, then update the Supabase Site URL and Redirect URLs to match.
->>>>>>> a66ec3c (refactor: remove hash fragments from all navigation links and routing logic)

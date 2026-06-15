@@ -65,8 +65,11 @@ function setChrome(minimal) {
   ["#navLinks", "#bottomNav", "#searchBtn", "#manageBtn"].forEach((sel) => $(sel)?.classList.toggle("hidden", minimal));
 }
 function setActive(route) {
-  const target = "#" + (route === "lesson" ? "learn" : route);
-  $$(".nav-link, .bn-link").forEach((a) => a.classList.toggle("active", a.getAttribute("href") === target));
+  const target = route === "home" ? "#" : "#" + (route === "lesson" ? "learn" : route);
+  $$(".nav-link, .bn-link").forEach((a) => {
+    const href = a.getAttribute("href");
+    a.classList.toggle("active", href === target || (route === "home" && (href === "#" || href === "")));
+  });
 }
 
 function route() {
@@ -74,6 +77,15 @@ function route() {
   const [seg, sub] = hash.split("/");
   let r = seg || "home";
   const outlet = $("#view");
+
+  // Clean up URL to '/' when on the home page (removing '#home' or '#').
+  if (r === "home" && location.hash !== "") {
+    try {
+      history.replaceState("", document.title, window.location.pathname + window.location.search);
+    } catch (e) {
+      console.warn("replaceState failed", e);
+    }
+  }
 
   // Gate everything behind sign-in when auth is configured.
   if (isAuthEnabled() && !authUser) {
@@ -87,7 +99,7 @@ function route() {
 
   // If logged in but still on the auth route, redirect to home or onboarding.
   if (r === "auth") {
-    location.hash = isOnboarded() ? "home" : "onboarding";
+    location.hash = isOnboarded() ? "" : "onboarding";
     return;
   }
 
