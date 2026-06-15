@@ -33,10 +33,10 @@ export function renderHome(outlet) {
 
       <div class="section-title" style="margin:22px 0 2px">Explore</div>
       <div class="grid grid-2">
-        ${exploreCard("#/picks", "ph-sparkle", "Get stock ideas", "Past-performance picks matched to your profile")}
-        ${exploreCard("#/blueprint", "ph-compass", "Wealth blueprint", "Your personalized plan and tips")}
-        ${exploreCard("#/paper", "ph-wallet", "Paper trade", "Practice with ₹10L virtual cash")}
-        ${exploreCard("#/learn", "ph-graduation-cap", "Learn", "Bite-sized investing lessons")}
+        ${exploreCard("picks", "ph-sparkle", "Get stock ideas", "Past-performance picks matched to your profile")}
+        ${exploreCard("blueprint", "ph-compass", "Wealth blueprint", "Your personalized plan and tips")}
+        ${exploreCard("paper", "ph-wallet", "Paper trade", "Practice with ₹10L virtual cash")}
+        ${exploreCard("learn", "ph-graduation-cap", "Learn", "Bite-sized investing lessons")}
       </div>
 
       <p class="disclaimer">
@@ -71,8 +71,8 @@ function goalCard(g) {
         <div class="progress" style="height:8px"><div class="progress-fill" style="width:${pctToGoal}%"></div></div>
       </div>
       <div class="row" style="margin-top:16px;gap:8px">
-        <a class="btn btn-primary btn-sm" href="#/blueprint" data-link><i class="ph ph-compass"></i> See my plan</a>
-        <a class="btn btn-ghost btn-sm" href="#/onboarding" data-link>Adjust goal</a>
+        <a class="btn btn-primary btn-sm" href="blueprint" data-link><i class="ph ph-compass"></i> See my plan</a>
+        <a class="btn btn-ghost btn-sm" href="onboarding" data-link>Adjust goal</a>
       </div>
     </div>`;
 }

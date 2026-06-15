@@ -66,7 +66,7 @@ export function renderBlueprint(outlet) {
       </div>
 
       ${lesson ? `
-      <a class="card card-pad card-link" href="#/lesson/${lesson.id}" data-link style="display:flex;align-items:center;gap:14px">
+      <a class="card card-pad card-link" href="lesson/${lesson.id}" data-link style="display:flex;align-items:center;gap:14px">
         <div class="lesson-ic"><i class="ph ${lesson.icon}"></i></div>
         <div style="flex:1"><div class="eyebrow">Recommended next lesson</div><div style="font-weight:600;margin-top:2px">${lesson.title}</div></div>
         <i class="ph ph-arrow-right" style="font-size:20px;color:var(--text-3)"></i>

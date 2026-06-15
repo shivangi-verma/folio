@@ -35,10 +35,15 @@ export async function initSupabase() {
 
 /* ---------- Auth ---------- */
 export async function signUp(email, password) {
-  const { data, error } = await client.auth.signUp({ email, password });
+  const { data, error } = await client.auth.signUp({
+    email,
+    password,
+    options: { emailRedirectTo: location.origin },
+  });
   if (error) throw error;
   return data; // data.session is null when email confirmation is required
 }
+
 export async function signIn(email, password) {
   const { data, error } = await client.auth.signInWithPassword({ email, password });
   if (error) throw error;

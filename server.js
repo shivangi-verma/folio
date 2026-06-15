@@ -48,6 +48,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Folio dev server: http://localhost:${PORT}`);
+  console.log(`Folio dev server: https://folio-mca.vercel.app/`);
   console.log(`AI advice: ${process.env.GEMINI_API_KEY ? "enabled (" + (process.env.GEMINI_MODEL || "gemini-flash-lite-latest") + ")" : "disabled — add GEMINI_API_KEY to .env.local"}`);
 });

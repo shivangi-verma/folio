@@ -65,7 +65,7 @@ function setChrome(minimal) {
   ["#navLinks", "#bottomNav", "#searchBtn", "#manageBtn"].forEach((sel) => $(sel)?.classList.toggle("hidden", minimal));
 }
 function setActive(route) {
-  const target = "#/" + (route === "lesson" ? "learn" : route);
+  const target = "" + (route === "lesson" ? "learn" : route);
   $$(".nav-link, .bn-link").forEach((a) => a.classList.toggle("active", a.getAttribute("href") === target));
 }
 
@@ -85,7 +85,14 @@ function route() {
     return;
   }
 
+  // If logged in but still on the auth route, redirect to home or onboarding.
+  if (r === "auth") {
+    location.hash = isOnboarded() ? "home" : "onboarding";
+    return;
+  }
+
   if (!isOnboarded() && r !== "onboarding") r = "onboarding";
+
   const minimal = r === "onboarding";
   setChrome(minimal);
   $("#accountBtn")?.classList.toggle("hidden", !(isAuthEnabled() && authUser) || minimal);

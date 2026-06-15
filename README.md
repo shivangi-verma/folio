@@ -56,7 +56,7 @@ Folio is a single page application built from plain HTML, CSS, and JavaScript mo
 - **Application logic.** A hash based router and navigation (`js/main.js`), an in memory state store with persistence (`js/store.js`), the deterministic engine (`js/engine.js`), the guidance text generator (`js/advisor.js`), the quote client and symbol search (`js/quotes.js`), and the optional auth and sync layer (`js/supabase.js`).
 - **Data layer.** A live quote service reached over the network, the exchange symbol directory held in the browser database, and browser storage for the user's own data.
 
-Routing is driven by the URL hash. Changing the hash (for example to `#/picks`) triggers the router, which clears the main outlet and calls the matching view's render function. When authentication is enabled, the router gates every route behind sign in.
+Routing is driven by the URL hash. Changing the hash (for example to `picks`) triggers the router, which clears the main outlet and calls the matching view's render function. When authentication is enabled, the router gates every route behind sign in.
 
 ## 4. How each part works
 

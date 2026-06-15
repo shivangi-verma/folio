@@ -36,7 +36,7 @@ export function renderAccount(outlet) {
       <div class="card card-pad">
         <div class="section-title">Manage</div>
         <div class="grid" style="margin-top:14px;gap:10px">
-          <a class="btn btn-secondary" href="#/onboarding" data-link><i class="ph ph-pencil-simple"></i> Edit profile and goal</a>
+          <a class="btn btn-secondary" href="onboarding" data-link><i class="ph ph-pencil-simple"></i> Edit profile and goal</a>
           <button class="btn btn-ghost" id="signOut" style="color:var(--neg)"><i class="ph ph-sign-out"></i> Sign out</button>
         </div>
         <p class="help" style="margin:14px 0 0">Your profile, watchlist and paper portfolio are saved to this account and follow you across devices.</p>

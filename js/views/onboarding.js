@@ -77,7 +77,7 @@ const STEPS = [
         <label class="label">Annual income</label>
         <select class="select" data-bind="incomeBand">
           ${["", "< ₹3 L", "₹3–8 L", "₹8–15 L", "₹15–30 L", "₹30 L +"].map((b, i) =>
-            `<option value="${i === 0 ? "" : b}" ${draft.incomeBand === b ? "selected" : ""}>${i === 0 ? "Select…" : b}</option>`).join("")}
+      `<option value="${i === 0 ? "" : b}" ${draft.incomeBand === b ? "selected" : ""}>${i === 0 ? "Select…" : b}</option>`).join("")}
         </select>
       </div>
       <div class="field">
@@ -308,5 +308,5 @@ function finish() {
   });
   completeOnboarding();
   showToast("Welcome to Folio 🌱", "success");
-  location.hash = "#/home";
+  location.hash = "home";
 }
