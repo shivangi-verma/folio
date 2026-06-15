@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Folio — Learn to invest with confidence</title>
+  <meta name="description" content="Folio helps you onboard to investing: build your profile, get past-performance-based stock ideas, a personalized wealth blueprint, and a reality-check on your goals. Educational, not advice." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+  <script src="motion.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="topnav" id="topnav">
+      <div class="topnav-inner">
+        <a class="brand" href="#/home" data-link>
+          <span class="brand-mark">F</span>
+          <span>Fol<em>i</em>o</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+          <a class="nav-link" href="#/home" data-link>Home</a>
+          <a class="nav-link" href="#/picks" data-link>Picks</a>
+          <a class="nav-link" href="#/blueprint" data-link>Blueprint</a>
+          <a class="nav-link" href="#/paper" data-link>Paper&nbsp;trade</a>
+          <a class="nav-link" href="#/learn" data-link>Learn</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-btn" id="searchBtn" aria-label="Search stocks">
+            <i class="ph ph-magnifying-glass" style="font-size:19px"></i>
+          </button>
+          <button class="icon-btn" id="manageBtn" aria-label="Manage watchlist">
+            <i class="ph ph-sliders-horizontal" style="font-size:19px"></i>
+          </button>
+          <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+            <i class="ph ph-moon" style="font-size:19px"></i>
+          </button>
+          <a class="icon-btn hidden" id="accountBtn" href="#/account" data-link aria-label="Account">
+            <i class="ph ph-user-circle" style="font-size:21px"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="view"><!-- views render here --></main>
+
+    <nav class="bottom-nav" id="bottomNav">
+      <a class="bn-link" href="#/home" data-link><i class="ph ph-house"></i><span>Home</span></a>
+      <a class="bn-link" href="#/picks" data-link><i class="ph ph-sparkle"></i><span>Picks</span></a>
+      <a class="bn-link" href="#/blueprint" data-link><i class="ph ph-compass"></i><span>Plan</span></a>
+      <a class="bn-link" href="#/paper" data-link><i class="ph ph-wallet"></i><span>Paper</span></a>
+      <a class="bn-link" href="#/learn" data-link><i class="ph ph-graduation-cap"></i><span>Learn</span></a>
+    </nav>
+  </div>
+
+  <!-- Spotlight search -->
+  <div id="spotlightOverlay" class="overlay">
+    <div class="modal">
+      <div class="modal-head">
+        <i class="ph ph-magnifying-glass"></i>
+        <input type="text" id="spotlightInput" placeholder="Search by symbol or company…" autocomplete="off" />
+      </div>
+      <ul id="spotlightResults" class="results"></ul>
+      <div class="modal-foot">
+        <span>↑↓ to navigate · ↵ to add</span>
+        <span><span class="kbd">esc</span> to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manage watchlist -->
+  <div id="manageOverlay" class="overlay">
+    <div class="modal">
+      <div class="modal-head">
+        <span class="modal-title">Manage watchlist</span>
+        <button class="icon-btn" id="closeManage" aria-label="Close"><i class="ph ph-x"></i></button>
+      </div>
+      <div style="padding:16px 18px">
+        <p class="help" style="margin:0 0 6px">Remove bookmarked stocks. Drag cards on Home to reorder.</p>
+        <div id="manageList"></div>
+      </div>
+      <div class="modal-foot">
+        <span id="symbolsStatus">Symbols: checking…</span>
+        <button class="btn-ghost btn-sm" id="refreshSymbols"><i class="ph ph-arrows-clockwise"></i> Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="symboldb.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

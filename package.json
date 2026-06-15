@@ -1,0 +1,10 @@
+{
+  "name": "folio",
+  "version": "1.0.0",
+  "description": "Folio — an educational stock recommendation and investor onboarding web app (static front-end, no build step)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js 8000",
+    "static": "npx --yes http-server -p 8000 -c-1 ."
+  }
+}

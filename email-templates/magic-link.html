@@ -1,0 +1,39 @@
+<!-- Folio · Supabase "Magic Link" email template (passwordless email login)
+     Paste into: Authentication -> Email Templates -> Magic Link (Message body, HTML)
+     Suggested subject: Your Folio sign-in link
+     Variables: {{ .ConfirmationURL }}  {{ .Token }}  {{ .Email }}  {{ .SiteURL }} -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F6F2E9;margin:0;padding:32px 16px;">
+  <tr><td align="center">
+    <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="max-width:480px;width:100%;background:#FFFFFF;border:1px solid #E7E2D6;border-radius:16px;">
+      <tr><td style="padding:32px 32px 0 32px;">
+        <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          <td style="width:34px;height:34px;background:#B7F24A;border-radius:9px;text-align:center;font-family:Georgia,serif;font-weight:bold;font-size:18px;color:#18260A;">F</td>
+          <td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:#1B1910;">Fol<span style="color:#6FB81E;">i</span>o</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="padding:24px 32px 0 32px;font-family:Georgia,'Times New Roman',serif;font-size:24px;color:#1B1910;">Your sign-in link</td></tr>
+      <tr><td style="padding:12px 32px 0 32px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#6A6454;">
+        Use the button below to sign in to Folio. The link works once and expires shortly. If you did not request it, you can ignore this email.
+      </td></tr>
+      <tr><td style="padding:24px 32px 4px 32px;">
+        <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          <td bgcolor="#B7F24A" style="border-radius:999px;">
+            <a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:13px 30px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#18260A;text-decoration:none;border-radius:999px;">Sign in to Folio</a>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="padding:14px 32px 0 32px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.6;color:#6A6454;">
+        Prefer a code? Enter this one in the app:
+        <div style="margin-top:8px;font-family:'Courier New',monospace;font-size:22px;letter-spacing:4px;font-weight:bold;color:#1B1910;">{{ .Token }}</div>
+      </td></tr>
+      <tr><td style="padding:14px 32px 0 32px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.6;color:#9A9483;">
+        Or paste this link into your browser:<br>
+        <a href="{{ .ConfirmationURL }}" style="color:#6FB81E;word-break:break-all;">{{ .ConfirmationURL }}</a>
+      </td></tr>
+      <tr><td style="padding:20px 32px;"><hr style="border:none;border-top:1px solid #EDE8DC;margin:0;"></td></tr>
+      <tr><td style="padding:0 32px 28px 32px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#9A9483;">
+        Folio is an educational tool. It surfaces stock ideas based on past performance and does not provide investment advice, execute trades, or replace a registered adviser or broker.
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
